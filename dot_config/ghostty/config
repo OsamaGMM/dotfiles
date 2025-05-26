@@ -39,5 +39,3 @@ keybind = cmd+s>up=resize_split:up,16
 keybind = cmd+s>down=resize_split:down,16
 keybind = cmd+s>left=resize_split:left,16
 keybind = cmd+s>right=resize_split:right,16
-
-keybind = cmd+s>e=equalize_splits
