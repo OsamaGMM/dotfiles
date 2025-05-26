@@ -3,8 +3,23 @@
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
-# Path to your Oh My Zsh installation.
+# Install Oh My Zsh if it's not already installed
 export ZSH="$HOME/.oh-my-zsh"
+if [ ! -d "$ZSH" ]; then
+  echo "Installing Oh My Zsh..."
+  RUNZSH=no KEEP_ZSHRC=yes \
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# Install syntax plugins via Homebrew if not already installed
+if ! [ -f "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  echo "Installing zsh-autosuggestions..."
+  brew install zsh-autosuggestions
+fi
+if ! [ -f "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  echo "Installing zsh-syntax-highlighting..."
+  brew install zsh-syntax-highlighting
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
