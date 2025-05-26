@@ -12,7 +12,7 @@ This repo uses [chezmoi](https://www.chezmoi.io) to manage dotfiles across machi
 # macOS (with Homebrew)
 brew install chezmoi
 
-config init yourusername --apply
+config init https://github.com/OsamaGMM/dotfiles --apply
 
 
 # Add a file to chezmoi management
@@ -31,12 +31,3 @@ Additional Tips
 Avoid editing config files directly; always use config edit.
 
 To view differences before applying, use config diff.
-
-# New Machine
-```bash
-brew install chezmoi
-
-# Then  we do
-
-chezmoi init https://github.com/OsamaGMM/dotfiles --apply
-```
