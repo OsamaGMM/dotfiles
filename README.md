@@ -12,19 +12,25 @@ This repo uses [chezmoi](https://www.chezmoi.io) to manage dotfiles across machi
 # macOS (with Homebrew)
 brew install chezmoi
 
-config init https://github.com/OsamaGMM/dotfiles --apply
+chezmoi init https://github.com/OsamaGMM/dotfiles --apply
 
 
 # Add a file to chezmoi management
-config add <path-to-file>
+chezmoi add <path-to-file>
 
-config add ~/.zshrc
+chezmoi add ~/.zshrc
 
-config edit <path-to-file>
+chezmoi edit <path-to-file>
 
-config edit ~/.zshrc
+chezmoi edit ~/.zshrc
 
-config apply
+chezmoi apply
+
+chezmoi diff          # see what's changed
+chezmoi apply         # apply changes to actual files
+chezmoi git add -u    # stage the updated files
+chezmoi git commit -m "Update"
+chezmoi git push      # push to GitHub
 ```
 
 Additional Tips
