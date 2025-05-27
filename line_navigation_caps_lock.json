@@ -1,0 +1,59 @@
+{
+    "description": "Use Caps Lock + '[/']' for line navigation",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "caps_lock",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [
+                {
+                    "set_variable": {
+                        "name": "caps_lock_pressed",
+                        "value": 1
+                    }
+                }
+            ],
+            "to_after_key_up": [
+                {
+                    "set_variable": {
+                        "name": "caps_lock_pressed",
+                        "value": 0
+                    }
+                }
+            ],
+            "to_if_alone": [{ "key_code": "caps_lock" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "name": "caps_lock_pressed",
+                    "type": "variable_if",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "quote",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "end" }],
+            "type": "basic"
+        },
+        {
+            "conditions": [
+                {
+                    "name": "caps_lock_pressed",
+                    "type": "variable_if",
+                    "value": 1
+                }
+            ],
+            "from": {
+                "key_code": "open_bracket",
+                "modifiers": { "optional": ["any"] }
+            },
+            "to": [{ "key_code": "home" }],
+            "type": "basic"
+        }
+    ]
+}

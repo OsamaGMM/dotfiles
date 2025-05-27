@@ -1,0 +1,13 @@
+{
+  "description": "Change right_command to control",
+  "manipulators": [
+    {
+      "from": {
+        "key_code": "right_command",
+        "modifiers": { "optional": ["any"] }
+      },
+      "to": [{ "key_code": "left_control" }],
+      "type": "basic"
+    }
+  ]
+}
